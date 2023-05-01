@@ -230,7 +230,7 @@ void ChatService::clientCloseException(const TcpConnectionPtr &conn)
 // 处理一对一聊天业务
 void ChatService::oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time)
 {
-    int toid = js["to"];
+    int toid = js["toid"];
     {
         lock_guard<mutex> lock(_connMutex);
         auto it = _userConnMap.find(toid);
